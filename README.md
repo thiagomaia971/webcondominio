@@ -41,7 +41,7 @@ Equipe 3
 * Funcionalidades:
   0. Cadastro de condominos
   0. Login no sistema/esqueceu senha
-  0.Emitir/consultar boletos status pagamento
+  0. Emitir/consultar boletos status pagamento
 
 -------------------------------------------------------------------------------------------
 
