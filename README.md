@@ -7,13 +7,13 @@ Equipe 1
 --------
 
 * Integrantes:
-  1. Caio Pontes 
-  2. Ronaldo Almeida
+  0. Caio Pontes 
+  0. Ronaldo Almeida
 
 * Funcionalidades:
-  1. Cadastro de despesas
-  2. Lançamento de despesas
-  2. relatorio mensal por tipo de despesas
+  0. Cadastro de despesas
+  0. Lançamento de despesas
+  0. relatorio mensal por tipo de despesas
 
 -------------------------------------------------------------------------------------------
 
@@ -21,13 +21,13 @@ Equipe 2
 --------
 
 * Integrantes:
-  1. Thiago Maia
-  2. Andre 
+  0. Thiago Maia
+  0. Andre 
 
 * Funcionalidades:
-  1. Cadastro de fornecedor
-  2. Relatorio/gráfico da inandiplencia por periodo
-  3. Consultar despesas mensal (cliente)
+  0. Cadastro de fornecedor
+  0. Relatorio/gráfico da inandiplencia por periodo
+  0. Consultar despesas mensal (cliente)
   
 -------------------------------------------------------------------------------------------
 
@@ -35,13 +35,13 @@ Equipe 3
 --------
 
 * Integrantes:
-  1. Anderson Leony
-  2. Yuri de Carvalho
+  0. Anderson Leony
+  0. Yuri de Carvalho
 
 * Funcionalidades:
-  1. Cadastro de condominos
-  2. Login no sistema/esqueceu senha
-  3.Emitir/consultar boletos status pagamento
+  0. Cadastro de condominos
+  0. Login no sistema/esqueceu senha
+  0.Emitir/consultar boletos status pagamento
 
 -------------------------------------------------------------------------------------------
 
@@ -49,14 +49,14 @@ Equipe 4
 --------
 
 * Integrantes:
-  1. Matheus Alves
-  2. Paulean Medina
-  3. Lorena Martins
+  0. Matheus Alves
+  0. Paulean Medina
+  0. Lorena Martins
 
 * Funcionalidades:
-  1. Manter cadastro de funcionarios
-  2. Controle do fundo de caixa
-  3. Envio de e-mail SMS de comunicados aos condominos
+  0. Manter cadastro de funcionarios
+  0. Controle do fundo de caixa
+  0. Envio de e-mail SMS de comunicados aos condominos
 
 -------------------------------------------------------------------------------------------
 
@@ -64,13 +64,13 @@ Equipe 5
 --------
 
 * Integrantes:
-  1. Bruno Romero
-  2. Mario Filho
+  0. Bruno Romero
+  0. Mario Filho
 
 * Funcionalidades:
-  1. Controle/emissao de boleto / taxa de condominio
-  2. Controle/pagamento de boletos
-  3. Relatorio grafico de despesas/receitas
+  0. Controle/emissao de boleto / taxa de condominio
+  0. Controle/pagamento de boletos
+  0. Relatorio grafico de despesas/receitas
 
 
 
