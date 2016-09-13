@@ -1,42 +1,106 @@
 <html>
-    <head>
-        <script src="../Scripts/jquery-2.2.3.js"></script>
-        
-        <script src="../Scripts/bootstrap.js"></script>
-        <link rel="stylesheet" href="../Styles/bootstrap.css">
-        <title>
-            WebCondominio - Cadastro Fornecedor
-        </title>
-    </head>
+<head>
 
-    <body>
-        
-        <div class="form-group col-md-4">
-            <label for="NomeFornecedor">Nome do Fornecedor</label>
-            <input type="text" id="NomeFornecedor" name="NomeFornecedor" class="form-control"></input>
-        </div>
+    <script src="../Scripts/Jquery/jquery-2.2.3.js"></script>
+    <script src="../Scripts/Bootstrap/bootstrap.js"></script>
+    <script src="../Scripts/CadastroFornecedor/cadastroFornecedor.js"></script>
 
-        <div class="clearfix"></div>
+    <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap.css.map">
+    <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap-theme.css">
+    <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap-theme.css.map">
+    <link rel="stylesheet" href="../Styles/Site.css">
 
-        <div class="form-group col-md-2">
-            <label for="TipoLogradouro">Tipo Logradouro</label>
-            <select name="TipoLogradouro" id="TipoLogradouro" class="form-control">
-                <option value="0">Selecione...</option>
-                <option value="1">Rua</option>
-                <option value="2">Avenida</option>
-            </select>
-        </div>
+    <title>
+        WebCondominio - Cadastro Fornecedor
+    </title>
 
-        <div class="form-group col-md-4">
-            <label for="Logradouro">Logradouro</label>
-            <input type="text" id="Logradouro" name="Logradouro" class="form-control"></input>
-        </div>
+</head>
+<body>
+    <div class="container">
 
-        <div class="form-group col-md-2">
-            <label for="Cep">CEP</label>
-            <input type="text" id="Cep" name="Cep" class="form-control"></input>
-        </div>
+        <form>
 
-    </body>
+            <div class="panel panel-primary">
 
+                <div class="panel-heading">
+                    <p class="panel-title">Cadastro de Fornecedor</p>
+                </div>
+
+                <div class="panel-body">
+
+                    <div class="row">
+
+                        <div class="form-group col-md-4">
+                            <label for="NomeFornecedor">Nome do Fornecedor</label>
+                            <input type="text" id="NomeFornecedor" name="NomeFornecedor" class="form-control" />
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="form-group col-md-2">
+                            <label for="TipoLogradouro">Tipo Logradouro</label>
+                            <select name="TipoLogradouro" id="TipoLogradouro" class="form-control">
+                                <option value="0">Selecione...</option>
+                                <option value="1">Rua</option>
+                                <option value="2">Avenida</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label for="Logradouro">Logradouro</label>
+                            <input type="text" id="Logradouro" name="Logradouro" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="Cep">CEP</label>
+                            <input type="text" id="Cep" name="Cep" class="form-control" />
+                        </div>
+
+                        <div class="clearfix">
+
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <label class="radio-inline">
+                                <input type="radio" name="TipoPessoa" id="inlineRadio1" value="PessoaFisica"> Pessoa Fisica
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="TipoPessoa" id="inlineRadio2" value="PessoaJuridica"> Pessoa Juridica
+                            </label>
+                        </div>
+
+                        <div id="containerTipoPessoa" class="col-md-12" style="padding-bottom: 15px">
+                            <div style="border: 1px solid black">
+                                Container do tipo de pessoa
+
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="Senha">Senha</label>
+                            <input type="password" id="Senha" name="Senha" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="ConfirmarSenha">Confirmar Senha</label>
+                            <input type="password" id="ConfirmarSenha" name="ConfirmarSenha" class="form-control" />
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="panel-footer">
+                    <button class="btn btn-danger" type="button">Cancelar</button>
+                    <button id="btnCadastrarFornecedor" class="btn btn-success" type="submit" disabled>Cadastrar</button>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
 </html>
