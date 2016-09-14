@@ -1,10 +1,6 @@
 <html>
 <head>
 
-    <script src="../Scripts/Jquery/jquery-2.2.3.js"></script>
-    <script src="../Scripts/Bootstrap/bootstrap.js"></script>
-    <script src="../Scripts/CadastroFornecedor/cadastroFornecedor.js"></script>
-
     <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap.css">
     <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap.css.map">
     <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap-theme.css">
@@ -19,7 +15,7 @@
 <body>
     <div class="container">
 
-        <form>
+        <form class="" data-isvalid="false">
 
             <div class="panel panel-primary">
 
@@ -33,7 +29,7 @@
 
                         <div class="form-group col-md-4">
                             <label for="NomeFornecedor">Nome do Fornecedor</label>
-                            <input type="text" id="NomeFornecedor" name="NomeFornecedor" class="form-control" />
+                            <input type="text" id="NomeFornecedor" name="NomeFornecedor" class="form-control" required />
                         </div>
 
                         <div class="clearfix"></div>
@@ -49,7 +45,7 @@
 
                         <div class="form-group col-md-5">
                             <label for="Logradouro">Logradouro</label>
-                            <input type="text" id="Logradouro" name="Logradouro" class="form-control" />
+                            <input type="text" id="Logradouro" name="Logradouro" class="form-control" required />
                         </div>
 
                         <div class="form-group col-md-2">
@@ -93,7 +89,7 @@
 
                 <div class="panel-footer">
                     <button class="btn btn-danger" type="button">Cancelar</button>
-                    <button id="btnCadastrarFornecedor" class="btn btn-success" type="submit" disabled>Cadastrar</button>
+                    <button id="btnCadastrarFornecedor" class="btn btn-success btn-formvalid" type="submit" disabled>Cadastrar</button>
                 </div>
 
             </div>
@@ -101,6 +97,10 @@
         </form>
 
     </div>
+
+    <script src="../Scripts/Jquery/jquery-2.2.3.js"></script>
+    <script src="../Scripts/Bootstrap/bootstrap.js"></script>
+    <script src="../Scripts/CadastroFornecedor/cadastroFornecedor.js"></script>
 
 </body>
 </html>

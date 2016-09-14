@@ -1,14 +1,36 @@
 (function () {
 
     $(document).on("click", "#btnCadastrarFornecedor", function (e) {
-        e.preventDefault();
+        //e.preventDefault();
+        console.log("button pressed");
+    });
 
-        console.log("opa");
+    $(":input[required]:visible").on("change", function () {
+        var isValid = true;
+
+        if (!IsNullOrEmpty($(this).val())) {
+
+            $(":input[required]:visible").each(function () {
+                if (IsNullOrEmpty($(this).val())) {
+                    isValid = false;
+                }
+            });
+
+        }
+        $("form").data("isvalid", isValid);
+
+        $(".btn-formvalid").prop("disabled", (isValid)?"":"disabled");
 
     });
 
-    $("form").on("change", function () {
-        console.log("as");
-    });
+
+
+    var IsNullOrEmpty = function (value) {
+        return (!value || value.length === 0);
+    }
+
+    var verifica = function () {
+
+    }
 
 })();
