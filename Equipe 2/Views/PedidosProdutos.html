@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap.css.map">
+    <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap-theme.css">
+    <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap-theme.css.map">
+    <link rel="stylesheet" href="../Styles/Site.css">
+
+    <meta charset="UTF-8">
+
+    <title>WebCondominio - Pedidos de produtos</title>
+</head>
+
+<!--TODO REMOVER STYLE DA TAG BODY-->
+
+<body>
+    <class class="container">
+        <form>
+
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">
+                    <p class="panel-title">Pedidos de Produtos</p>
+                </div>
+
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="Produto">Produto</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="NumeroPedido">Nº Pedido</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <button class="btn btn-primary" required>Buscar</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <table class="table table-striped" id='table-pedidos'>
+                            <thead>
+                                <tr>
+                                    <th>Nº Pedido</th>
+                                    <th>Nome do Produto</th>
+                                    <th>Quantidade</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id='table-pedidos-body'>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+        </form>
+    </class>
+
+    <script src="../Scripts/Jquery/jquery-2.2.3.js"></script>
+    <script src="../Scripts/Bootstrap/bootstrap.js"></script>
+    <script src="../Scripts/PedidosProdutos/pedidosProdutos.js"></script>
+</body>
+
+</html>
