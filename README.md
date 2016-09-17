@@ -1,57 +1,76 @@
-# webcondominio
-Projeto desenvolvido pelos alunos da Unifor na disciplina de Tecnologia de Internet
+# WebCondominio
+===============
+
+Projeto desenvolvido pelos alunos da Unifor na disciplina de Tecnologia de Internet.
 
 Equipe 1
+--------
 
-Caio Pontes 
-Ronaldo Almeida
+* Integrantes:
+  0. Caio Pontes 
+  0. Ronaldo Almeida
 
-cadastro de despesas
-Lançamento de despesas
-relatorio mensal por tipo de despesas
+* Funcionalidades:
+  0. Cadastro de despesas
+  0. Lançamento de despesas
+  0. relatorio mensal por tipo de despesas
 
 -------------------------------------------------------------------------------------------
+
 Equipe 2
+--------
 
-Thiago Maia
-Andre 
+* Integrantes:
+  0. Thiago Maia
+  0. Andre 
 
-cadastro de fornecedor
-Relatorio/grafico da inandiplencia por periodo
-Consultar despesas mensal (cliente)
+* Funcionalidades:
+  0. Cadastro de fornecedor
+  0. Relatorio/gráfico da inandiplencia por periodo
+  0. Consultar despesas mensal (cliente)
+  
 -------------------------------------------------------------------------------------------
 
 Equipe 3 
+--------
 
-Anderson Leony
-Yuri de Carvalho
+* Integrantes:
+  0. Anderson Leony
+  0. Yuri de Carvalho
 
-Cadastro de condominos
-Login no sistema/esqueceu senha
-Emitir/consultar boletos status pagamento
+* Funcionalidades:
+  0. Cadastro de condominos
+  0. Login no sistema/esqueceu senha
+  0. Emitir/consultar boletos status pagamento
 
 -------------------------------------------------------------------------------------------
 
 Equipe 4
+--------
 
-Matheus Alves
-Paulean Medina
-Lorena Martins
+* Integrantes:
+  0. Matheus Alves
+  0. Paulean Medina
+  0. Lorena Martins
 
-Manter cadastro de funcionarios
-Controle do fundo de caixa
-Envio de e-mail SMS de comunicados aos condominos
+* Funcionalidades:
+  0. Manter cadastro de funcionarios
+  0. Controle do fundo de caixa
+  0. Envio de e-mail SMS de comunicados aos condominos
 
 -------------------------------------------------------------------------------------------
 
 Equipe 5
+--------
 
-Bruno Romero
-Mario Filho
+* Integrantes:
+  0. Bruno Romero
+  0. Mario Filho
 
-Controle/emissao de boleto / taxa de condominio
-Controle/pagamento de boletos
-Relatorio grafico de despesas/receitas
+* Funcionalidades:
+  0. Controle/emissao de boleto / taxa de condominio
+  0. Controle/pagamento de boletos
+  0. Relatorio grafico de despesas/receitas
 
 
 
