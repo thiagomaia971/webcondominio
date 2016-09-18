@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -10,13 +10,16 @@
 
     <meta charset="UTF-8">
 
-    <title>WebCondominio - Pedidos de produtos</title>
+    <title>
+        WebCondominio - Pedidos de produtos
+    </title>
 </head>
 
 <!--TODO REMOVER STYLE DA TAG BODY-->
 
 <body>
-    <class class="container">
+    <div class="container">
+
         <form>
 
             <div class="panel panel-primary">
@@ -27,38 +30,34 @@
 
                 <div class="panel-body">
 
-                    <div class="row">
-                        <div class="form-group col-md-4">
-                            <label for="Produto">Produto</label>
-                            <input type="text" class="form-control" required>
-                        </div>
+                    <div class="row" style="width: 100%">
+                        <div class="centralizar">
+                            <div class="form-group col-md-5">
+                                <label for="Produto">Produto</label>
+                                <input type="text" class="form-control" required>
+                            </div>
 
-                        <div class="form-group col-md-4">
-                            <label for="NumeroPedido">Nº Pedido</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-
-
-                    </div>
-
-                    <div class="row">
-                        <div class="form-group col-md-4">
-                            <button class="btn btn-primary" required>Buscar</button>
+                            <div class="form-group col-md-5">
+                                <label for="NumeroPedido">Nº Pedido</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary" required style="margin-top: 25px;">Buscar</button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <table class="table table-striped" id='table-pedidos'>
+                    <div class="row col-md-12">
+                        <table class="table table-striped table-hover table-bordered" id='table-pedidos'>
                             <thead>
                                 <tr>
-                                    <th>Nº Pedido</th>
-                                    <th>Nome do Produto</th>
-                                    <th>Quantidade</th>
-                                    <th>Ações</th>
+                                    <th class="col-md-1">Nº Pedido</th>
+                                    <th class="col-md-6">Nome do Produto</th>
+                                    <th class="col-md-2">Quantidade</th>
+                                    <th class="col-md-3 text-center">Ações</th>
                                 </tr>
                             </thead>
-                            <tbody id='table-pedidos-body'>
-                            </tbody>
+                            <tbody id='table-pedidos-body'></tbody>
                         </table>
                     </div>
 
@@ -66,7 +65,7 @@
 
             </div>
         </form>
-    </class>
+    </div>
 
     <script src="../Scripts/Jquery/jquery-2.2.3.js"></script>
     <script src="../Scripts/Bootstrap/bootstrap.js"></script>

@@ -1,21 +1,28 @@
 (function () {
 
+    'use strict';
+
+    // Tratar click de cadastro
     $(document).on("click", "#btnCadastrarFornecedor", function (e) {
         //e.preventDefault();
+
         console.log("button pressed");
     });
 
-    $(":input[required]:visible").on("change", function () {
+    // Verificando se tudo está preenchido
+    $(":input[required]:visible").on("keyup", function () {
         var isValid = true;
-
-        if (!IsNullOrEmpty($(this).val())) {
+        
+        if (!$(this).val().isNullOrEmpty()) {
 
             $(":input[required]:visible").each(function () {
-                if (IsNullOrEmpty($(this).val())) {
+                if ($(this).val().isNullOrEmpty()) {
                     isValid = false;
                 }
             });
 
+        }else{
+            isValid = false;
         }
         $("form").data("isvalid", isValid);
 
@@ -24,9 +31,8 @@
     });
 
 
-
-    var IsNullOrEmpty = function (value) {
-        return (!value || value.length === 0);
+    String.prototype.isNullOrEmpty = function () {
+        return (!this || this.length === 0);
     }
 
     var verifica = function () {
