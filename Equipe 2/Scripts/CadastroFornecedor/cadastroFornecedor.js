@@ -4,9 +4,11 @@
 
     // Tratar click de cadastro
     $(document).on("click", "#btnCadastrarFornecedor", function (e) {
-        //e.preventDefault();
+        e.preventDefault();
 
-        console.log("button pressed");
+        var nomeFornecedor = $("#NomeFornecedor").val();
+        $("#mensagemCadastro").css("display", "");
+        $("#mensagemCadastro").html('<p class="text-center">Fornecedor <b>' + nomeFornecedor + "</b> foi cadastrado com sucesso!</p>");
     });
 
     // Verificando se tudo está preenchido
@@ -30,6 +32,7 @@
 
     });
 
+    
 
     String.prototype.isNullOrEmpty = function () {
         return (!this || this.length === 0);
