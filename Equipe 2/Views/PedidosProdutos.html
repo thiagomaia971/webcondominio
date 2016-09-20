@@ -19,47 +19,51 @@
     <div id="solicitarOfertaModal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Solicitar Oferta</h4>
-                </div>
-                <div class="modal-body">
-                    <div>
+                <form id="formSolicitarOferta">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Solicitar Oferta</h4>
+                    </div>
+                    <div class="modal-body">
 
-                        <div class="form-group col-md-6">
-                            <label>Produto: </label>
-                            <span id="NomeProduto" class="disabled"></span>
-                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label>Produto: </label>
+                                <span id="NomeProduto" class="disabled"></span>
+                            </div>
 
-                        <div class="form-group col-md-6">
-                            <label>Quantidade Pedida: </label>
-                            <span id="QuantidadePedida" class="disabled"></span>
-                        </div>
-                        
-                        <div class="form-group col-md-5">
-                            <label>Breve descrição do seu produto: </label>
-                            <textarea id="Descricao" name="Descricao" class="form-control"></textarea>
-                        </div>
+                            <div class="form-group col-md-6">
+                                <label>Quantidade Pedida: </label>
+                                <span id="QuantidadePedida" class="disabled"></span>
+                            </div>
 
-                        <div class="form-group col-md-3">
-                            <label>Quantidade a fornecer: </label>
-                            <input id="QuantidadeFornecer" name="QuantidadeFornecer" class="form-control" type="number" />
-                        </div>
+                            <div class="form-group col-md-6">
+                                <label for="Descricao">Breve descrição do seu produto: </label>
+                                <textarea id="Descricao" name="Descricao" class="form-control" rows="5" minlength="3" required></textarea>
+                            </div>
 
-                        <div class="form-group col-md-3">
-                            <label>Preço unitário: </label>
-                            <input id="PrecoUnitario" name="PrecoUnitario" class="form-control" type="number" />
-                        </div>
+                            <div class="form-group col-md-3">
+                                <label for="QuantidadeFornecer">Quantidade a fornecer: </label>
+                                <input id="QuantidadeFornecer" name="QuantidadeFornecer" class="form-control" type="number" required />
+                            </div>
 
-                        <div class="clearfix"></div>
+                            <div class="clearfix col-md-6"></div>
+
+                            <div class="form-group col-md-3">
+                                <label for="PrecoUnitario">Preço unitário: </label>
+                                <input id="PrecoUnitario" name="PrecoUnitario" class="form-control" type="number" required />
+                            </div>
+
+
+                        </div>
 
                     </div>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Voltar</button>
-                    <button type="button" class="btn btn-primary">Solicitar</button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Voltar</button>
+                        <button type="button" class="btn btn-success btn-formvalid" disabled>Solicitar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -103,8 +107,9 @@
             </div>
         </form>
     </div>
-    <script src="../Scripts/Jquery/jquery-2.2.3.js"></script>
-    <script src="../Scripts/Bootstrap/bootstrap.js"></script>
-    <script src="../Scripts/PedidosProdutos/pedidosProdutos.js"></script>
+    <script src="../Scripts/library/jquery/jquery-2.2.3.js"></script>
+    <script src="../Scripts/library/bootstrap/bootstrap.js"></script>
+    <script src="../Scripts/app/pedidosProdutos/pedidosProdutos.js"></script>
+    <script src="../Scripts/tools/formValidation.js"></script>
 </body>
 </html>

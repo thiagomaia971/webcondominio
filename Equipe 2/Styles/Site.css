@@ -27,7 +27,10 @@ body {
 }
 
 input:required:invalid {}
-input:required:valid, select:required:valid
+
+input:required:valid, 
+select:required:valid,
+textarea:required:valid
  {
     border-color: #0cef48;
 }
