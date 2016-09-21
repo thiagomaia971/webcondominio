@@ -2,22 +2,22 @@
 
     'use strict';
 
-    // Verificando se tudo está preenchido
+    // Verificando se tudo esta preenchido
     $(document).on("keyup", ":input[required]:visible", function () {
         var isValid = true;
 
         // Valor do KeyUp
         var valorDigitado = $(this).val();
 
-        // Formulário do Input
+        // Formulario do Input
         var thisForm = $(this).parents('form:first');
     
         // Se tiver valor
         if (!valorDigitado.isNullOrEmpty()) {
 
-            // Acha todos os inputs que são requireds e que estão visiveis
+            // Acha todos os inputs que sao requireds e que estao visiveis
             thisForm.find(":input[required]:visible").each(function () {
-                // Verifica se é inválido
+                // Verifica se e invalido
                 if (isInvalido(this)) {
                     isValid = false;
                 }
@@ -27,8 +27,9 @@
             isValid = false;
         }
 
-        // Habilita o botão(.btn-formvalid)
+        // Habilita o botao(.btn-formvalid)
         $(".btn-formvalid").prop("disabled", (isValid) ? "" : "disabled");
+        thisForm.data("valid", isValid);
 
     });
 

@@ -49,8 +49,11 @@
         }
 
     }
+    
     $(document).on("click", "#abrirSolicitarOfertaModal", function () {
-
+    	
+    	limparModal();
+    	
         var numeroPedido = $(this).data("numeropedido");
 
         var pedidoClickado;
@@ -66,11 +69,20 @@
 
         $("#NomeProduto").text(pedidoClickado.nome);
         $("#QuantidadePedida").text(pedidoClickado.quantidade);
-        
-
-        console.log(pedidoClickado);
 
         $("#NomeProduto");
     });
+    
+    function limparModal(){
+    	var inputs = $("#solicitarOfertaModal").find(":input[required]:visible");
+    	
+    	//var inputs = form.find(":input[required]:visible");
+    	
+    	console.log(inputs);
+    	inputs.each(function(){
+    		$(this).val("");
+    	});
+
+    }
 
 })();
