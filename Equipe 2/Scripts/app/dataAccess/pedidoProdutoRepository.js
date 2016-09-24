@@ -16,9 +16,11 @@ var pedidoProdutoRepository = (function() {
 	var getSingle = function(id){
 		var pedidos = JSON.parse(window.localStorage.getItem("pedidosProdutos"));
 		
-		pedidos.forEach((pedido) => {
-			return (pedido.id === id);
-		});
+		// retorna um produto caso encontre, undefined caso contrario.
+		return pedidos[id];
+		// pedidos.forEach((pedido) => {
+		// 	return (pedido.id === id);
+		// });
 	}
 	
 	var addSolicitacaoOferta = function(solicitacaoOferta){

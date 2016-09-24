@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap.css">
     <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap.css.map">
@@ -90,18 +91,34 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row col-md-12">
-                        <table class="table table-striped table-hover table-bordered" id='table-pedidos'>
-                            <thead>
-                                <tr>
-                                    <th class="col-md-1">Nº Pedido</th>
-                                    <th class="col-md-6">Nome do Produto</th>
-                                    <th class="col-md-2">Quantidade</th>
-                                    <th class="col-md-3 text-center">Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody id='table-pedidos-body'></tbody>
-                        </table>
+                    <div class="row col-md-12" id='holderTabelaPedidos'>
+                        <!--template para preencher tabela-->
+                       <script id="templateTabelaPedidos" type="text/x-handlebars-template">
+                            <table class="table table-striped table-hover table-bordered" id='table-pedidos'>
+                                <thead>
+                                    <tr>
+                                        <th class="col-md-1">Nº Pedido</th>
+                                        <th class="col-md-6">Nome do Produto</th>
+                                        <th class="col-md-2">Quantidade</th>
+                                        <th class="col-md-3 text-center">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id='table-pedidos-body'>
+                                    {{#pedidos}}
+                                    <tr>
+                                        <td>{{id}}</td>
+                                        <td>{{nomeProduto}}</td>
+                                        <td>{{quantidade}}</td>
+                                        <td>
+                                            <button id="abrirSolicitarOfertaModal" class="btn btn-info" type="button" data-toggle="modal" data-target="#solicitarOfertaModal"
+                                                data-pedidoid=${pedido.id} data-backdrop="static" data-keyboard="false"> Solicitar oferta</button>                                        | <button class="btn btn-info" type="button">Minhas ofertas</button>
+                                        </td>
+                                    </tr>
+                                    {{/pedidos}}
+                                </tbody>
+                            </table>
+                       </script>
+                       <!--fim do template-->
                     </div>
                 </div>
             </div>
@@ -110,7 +127,11 @@
     <script src="../Scripts/library/jquery/jquery-2.2.3.js"></script>
     <script src="../Scripts/library/bootstrap/bootstrap.js"></script>
     <script src="../Scripts/app/dataAccess/pedidoProdutoRepository.js"></script>
+    <script src="../Scripts/library/handlebars-v4.0.5.js"></script>
     <script src="../Scripts/app/pedidosProdutos/pedidosProdutos.js"></script>
     <script src="../Scripts/tools/formValidation.js"></script>
+
+
 </body>
+
 </html>

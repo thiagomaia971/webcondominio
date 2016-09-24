@@ -17,7 +17,7 @@
         // Adicionando um pedido para test ***
         var p = []
         p.push({
-        	id: 1,
+            id: 1,
             nomeProduto: "Vassoura",
             quantidade: 3
         });
@@ -25,34 +25,25 @@
 
         // carregar todos os pedidos registrados no localStorage 
         var pedidos = pedidoProdutoRepository.GetAll();
-        
-        // se existe pelo menos um pedido, insere na tabela
-        if (pedidos) {
-            var tablePedidosBody = $('#table-pedidos-body');
-            var countPedido = 0;
-            
-            pedidos.forEach((pedido) => {
-            	
-                var templatePedido = `<tr>
-                                        <td> ${pedido.id} <input type="hidden" name="Pedidos[${countPedido}].PedidoId" id="Pedidos_${countPedido}__PedidoId" value="${countPedido}"></input> </td>
-                                        <td> ${pedido.nomeProduto}   </td>
-                                        <td> ${pedido.quantidade}    </td>
-                                        <td>
-                                            <button id="abrirSolicitarOfertaModal" class ="btn btn-info" type="button" data-toggle="modal" data-target="#solicitarOfertaModal" data-pedidoid=${pedido.id} data-backdrop="static" data-keyboard="false"> Solicitar oferta</button> | <button class="btn btn-info" type="button">Minhas ofertas</button>
-                                        </td>
-                                     </tr>`;
 
-                tablePedidosBody.append($(templatePedido));
-            });
-        }
+        // localiza o template
+        var source = $('#templateTabelaPedidos').html();
+        // compila o template
+        var template = Handlebars.compile(source);
+        console.log(template);
+        // define os dados do template
+        var dados = {pedidos};
+
+        // insere o template
+        $('#holderTabelaPedidos').html(template(dados));
 
     }
-    
+
     // Abrir modal
     $(document).on("click", "#abrirSolicitarOfertaModal", function () {
-    	
-    	limparModal();
-    	
+
+        limparModal();
+
         var numeroPedido = $(this).data("pedidoid");
 
         var pedidoClickado;
@@ -71,23 +62,23 @@
 
         $("#NomeProduto");
     });
-    
+
     // Limpar modal
-    function limparModal(){
-    	var inputs = $("#solicitarOfertaModal").find(":input[required]:visible");
-    	
-    	inputs.each(function(){
-    		$(this).val("");
-    	});
+    function limparModal() {
+        var inputs = $("#solicitarOfertaModal").find(":input[required]:visible");
+
+        inputs.each(function () {
+            $(this).val("");
+        });
 
     }
-    
+
     // Solicitar oferta
-    $(document).on("click", "#btnSolicitarOferta", function(){
-    	var viewModel = JSON.stringify($("#formSolicitarOferta").serializeArray());
-    	console.log(viewModel);
-    	
-    	
+    $(document).on("click", "#btnSolicitarOferta", function () {
+        var viewModel = JSON.stringify($("#formSolicitarOferta").serializeArray());
+        console.log(viewModel);
+
+
     })
 
 })();
