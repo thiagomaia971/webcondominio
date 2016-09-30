@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap-theme.css">
     <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap-theme.css.map">
     <link rel="stylesheet" href="../Styles/Site.css">
+    <link rel="stylesheet" href="../Styles/toastr/toastr.css">
     <meta charset="UTF-8">
     <title>
         WebCondominio - Pedidos de produtos
@@ -62,7 +63,7 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Voltar</button>
-                        <button id="btnSolicitarOferta" type="button" class="btn btn-success btn-formvalid" disabled>Solicitar</button>
+                        <button id="btnSolicitarOferta" type="button" class="btn btn-success btn-formvalid" disabled data-pedidoid="">Solicitar</button>
                     </div>
                 </form>
             </div>
@@ -110,8 +111,18 @@
                                         <td>{{nomeProduto}}</td>
                                         <td>{{quantidade}}</td>
                                         <td>
-                                            <button id="abrirSolicitarOfertaModal" class="btn btn-info" type="button" data-toggle="modal" data-target="#solicitarOfertaModal"
-                                                data-pedidoid=${pedido.id} data-backdrop="static" data-keyboard="false"> Solicitar oferta</button>                                        | <button class="btn btn-info" type="button">Minhas ofertas</button>
+                                            <button id="abrirSolicitarOfertaModal" 
+												class="btn btn-info" type="button" data-toggle="modal" data-target="#solicitarOfertaModal"
+                                                data-pedidoid={{id}} data-backdrop="static" data-keyboard="false"> 
+
+												Solicitar oferta
+
+											</button>
+
+											<button class="btn btn-info" type="button">
+												Minhas ofertas
+											</button>
+
                                         </td>
                                     </tr>
                                     {{/pedidos}}
@@ -127,10 +138,12 @@
     <script src="../Scripts/library/jquery/jquery-2.2.3.js"></script>
     <script src="../Scripts/library/bootstrap/bootstrap.js"></script>
     <script src="../Scripts/app/dataAccess/pedidoProdutoRepository.js"></script>
+    <script src="../Scripts/app/dataAccess/login.js"></script>
     <script src="../Scripts/library/handlebars-v4.0.5.js"></script>
+	<script src="../Scripts/library/toastr/toastr.min.js"></script>
+    <script src="../Scripts/tools/toastrOptions.js"></script>
     <script src="../Scripts/app/pedidosProdutos/pedidosProdutos.js"></script>
     <script src="../Scripts/tools/formValidation.js"></script>
-
 
 </body>
 

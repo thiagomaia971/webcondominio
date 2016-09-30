@@ -3,7 +3,22 @@
 
     loadTablePedidos();
 
+    $(document).on("click", "#abrirSolicitarOfertaModal", function () {
+    	
+    	var numeroPedidoId = $(this).data("pedidoid");
+    	
+    	onOpenSolicitarOfertaModal(numeroPedidoId);
+    	
+    });
 
+    $(document).on("click", "#btnSolicitarOferta", function () {
+    	
+    	var numeroPedidoId = $(this).data("pedidoid");
+    	var pedidoProduto = pedidoProdutoRepository.GetSingle(numeroPedidoId);
+    	
+    	onSolicitarOferta(pedidoProduto);
+    	
+    })
 
 
 
@@ -19,7 +34,8 @@
         p.push({
             id: 1,
             nomeProduto: "Vassoura",
-            quantidade: 3
+            quantidade: 3,
+            solicitacoesOferta: []
         });
         pedidoProdutoRepository.Add(p);
 
@@ -30,7 +46,7 @@
         var source = $('#templateTabelaPedidos').html();
         // compila o template
         var template = Handlebars.compile(source);
-        console.log(template);
+
         // define os dados do template
         var dados = {pedidos};
 
@@ -40,28 +56,20 @@
     }
 
     // Abrir modal
-    $(document).on("click", "#abrirSolicitarOfertaModal", function () {
-
-        limparModal();
-
-        var numeroPedido = $(this).data("pedidoid");
-
-        var pedidoClickado;
-
-        var pedidos = pedidoProdutoRepository.GetAll();
-        //pedidos = JSON.parse(pedidos);
-
-        pedidos.forEach((pedido) => {
-            if (pedido.id == numeroPedido) {
-                pedidoClickado = pedido;
-            }
-        });
-
-        $("#NomeProduto").text(pedidoClickado.nomeProduto);
-        $("#QuantidadePedida").text(pedidoClickado.quantidade);
-
-        $("#NomeProduto");
-    });
+    function onOpenSolicitarOfertaModal(numeroPedidoId){
+    	
+    	limparModal();
+    	    	
+    	var todosPedidosProdutos = pedidoProdutoRepository.GetAll();
+    	
+    	var index = numeroPedidoId - 1;
+    	var pedidoProduto = todosPedidosProdutos[index];
+    	
+    	$("#NomeProduto").text(pedidoProduto.nomeProduto);
+    	$("#QuantidadePedida").text(pedidoProduto.quantidade);
+    	
+    	$("#btnSolicitarOferta").data("pedidoid", numeroPedidoId);
+    }
 
     // Limpar modal
     function limparModal() {
@@ -73,12 +81,43 @@
 
     }
 
+    var DESCRICAO = 0;
+    var QUANTIDADE_A_FORNECER = 1;
+    var PRECO_UNITARIO = 2;
+    
     // Solicitar oferta
-    $(document).on("click", "#btnSolicitarOferta", function () {
-        var viewModel = JSON.stringify($("#formSolicitarOferta").serializeArray());
-        console.log(viewModel);
-
-
-    })
+    function onSolicitarOferta(pedidoProduto){
+    	
+    	var viewModel =  JSON.parse((JSON.stringify($("#formSolicitarOferta").serializeArray())));
+    	
+    	var ultimaSolicitacaoOferta = pedidoProdutoRepository.GetLastSolicitacaoOferta(pedidoProduto.id);
+    	var id = 1;
+    	
+    	if(ultimaSolicitacaoOferta != undefined || ultimaSolicitacaoOferta != null){
+    		
+    		id = ultimaSolicitacaoOferta.id + 1;
+    		
+    	}
+    	
+    	var fornecedorLogado = login.GetFornecedorLogado();
+    	
+    	var solicitacaoOferta = {
+    			id: id,
+    			pedidoProdutoId: pedidoProduto.id,
+    			fornecedorId: fornecedorLogado.id,
+    			fornecedor: fornecedorLogado,
+    			pedidoProduto: pedidoProduto,
+    			descricao: viewModel[DESCRICAO].value,
+    			quantidadeFornecer: viewModel[QUANTIDADE_A_FORNECER].value,
+    			precoUnitario: viewModel[PRECO_UNITARIO].value,
+    	};
+    	
+    	pedidoProdutoRepository.AddSolicitacaoOferta(solicitacaoOferta);
+    	
+    	$("#solicitarOfertaModal").modal("hide");
+    	
+    	toastr["success"]("Sua Solicitação de Oferta foi enviada com Sucesso!")
+    	limparModal();
+    }
 
 })();

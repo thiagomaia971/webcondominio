@@ -14,31 +14,39 @@ var pedidoProdutoRepository = (function() {
 	}
 	
 	var getSingle = function(id){
-		var pedidos = JSON.parse(window.localStorage.getItem("pedidosProdutos"));
+		var pedidos = getAll();
+		var index = id - 1;
 		
 		// retorna um produto caso encontre, undefined caso contrario.
-		return pedidos[id];
-		// pedidos.forEach((pedido) => {
-		// 	return (pedido.id === id);
-		// });
+		return pedidos[index];
 	}
 	
 	var addSolicitacaoOferta = function(solicitacaoOferta){
 		
 		var pedido = getSingle(solicitacaoOferta.pedidoProdutoId);
+		
 		pedido.solicitacoesOferta.push(solicitacaoOferta);
 		
 		var pedidosProdutos = getAll();
-		produtos[pedido.id] = pedido;
+		pedidosProdutos[pedido.id-1] = pedido;
 		
-		window.localStorage.setItem("pedidosProdutos", pedidosProdutos);
+		window.localStorage.setItem("pedidosProdutos", JSON.stringify(pedidosProdutos));
+	}
+	
+	var getLastSolicitacaoOferta = function(pedidoProdutoId){
+		var pedidoProduto = getSingle(pedidoProdutoId);
+		
+		var lastIndex = pedidoProduto.solicitacoesOferta.length - 1;
+		
+		return pedidoProduto.solicitacoesOferta[lastIndex];
 	}
 	
 	return{
 		GetAll: getAll,
 		Add: add,
 		AddSolicitacaoOferta: addSolicitacaoOferta,
-		GetSingle: getSingle
+		GetSingle: getSingle,
+		GetLastSolicitacaoOferta: getLastSolicitacaoOferta
 	}
 	
 })();
