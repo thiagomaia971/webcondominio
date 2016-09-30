@@ -20,7 +20,14 @@
     	
     })
 
-
+    $(document).on("click", "#abrirMinhasSolicitacoesModal", function(){
+    	
+    	var numeroPedidoId = $(this).data("pedidoid");
+    	var pedidoProduto = pedidoProdutoRepository.GetSingle(numeroPedidoId)
+    	
+    	onOpenMinhasSolicitaçõesModal(pedidoProduto);
+    });
+    
 
 
 
@@ -44,6 +51,7 @@
 
         // localiza o template
         var source = $('#templateTabelaPedidos').html();
+        
         // compila o template
         var template = Handlebars.compile(source);
 
@@ -55,7 +63,7 @@
 
     }
 
-    // Abrir modal
+    // Abrir Solicitar Oferta modal
     function onOpenSolicitarOfertaModal(numeroPedidoId){
     	
     	limparModal();
@@ -117,7 +125,26 @@
     	$("#solicitarOfertaModal").modal("hide");
     	
     	toastr["success"]("Sua Solicitação de Oferta foi enviada com Sucesso!")
+    	
     	limparModal();
+    	
+    }
+    
+    // Abrir Minhas Solicitações de Oferta modal
+    function onOpenMinhasSolicitaçõesModal(pedidoProduto){
+    	
+    	
+        // localiza o template
+        var source = $('#templateTabelaMinhasSolicitacoes').html();
+        // compila o template
+        var template = Handlebars.compile(source);
+        
+        // define os dados do template
+        var dados = {pedidoProduto};
+        console.log(template(dados));
+        // insere o template
+        $('#holderTabelaMinhasSolicitacoes').html(template(dados));
+        
     }
 
 })();
