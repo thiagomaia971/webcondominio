@@ -34,3 +34,35 @@ textarea:required:valid
  {
     border-color: #0cef48;
 }
+
+.circle{
+	display: inline-block;
+	border-radius: 100px;
+	width: 15px;
+	height: 15px
+}
+
+.circle-primary{
+	background-color: #265a88;
+}
+
+.circle-default{
+	background-color: #e0e0e0;
+}
+
+.circle-success{
+	background-color: #419641;
+}
+
+.circle-info{
+	background-color: #28a4c9;#eb9316
+}
+
+.circle-warning{
+	background-color: #eb9316;
+}
+
+
+.circle-danger{
+	background-color: #c12e2a;
+}

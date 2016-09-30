@@ -118,6 +118,7 @@
     			descricao: viewModel[DESCRICAO].value,
     			quantidadeFornecer: viewModel[QUANTIDADE_A_FORNECER].value,
     			precoUnitario: viewModel[PRECO_UNITARIO].value,
+    			status: statusSolicitacaoOferta.PENDENTE
     	};
     	
     	pedidoProdutoRepository.AddSolicitacaoOferta(solicitacaoOferta);
@@ -133,17 +134,19 @@
     // Abrir Minhas Solicitações de Oferta modal
     function onOpenMinhasSolicitaçõesModal(pedidoProduto){
     	
-    	
         // localiza o template
-        var source = $('#templateTabelaMinhasSolicitacoes').html();
+        var source = $("#templateTabelaMinhasSolicitacoes").html() + "";
+        console.log(source);
+        
         // compila o template
         var template = Handlebars.compile(source);
         
         // define os dados do template
         var dados = {pedidoProduto};
-        console.log(template(dados));
+        
+        
         // insere o template
-        $('#holderTabelaMinhasSolicitacoes').html(template(dados));
+        $("#holderTabelaMinhasSolicitacoes").html(template(dados));
         
     }
 
