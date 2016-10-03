@@ -55,7 +55,7 @@ textarea:required:valid
 }
 
 .circle-info{
-	background-color: #28a4c9;#eb9316
+	background-color: #28a4c9;
 }
 
 .circle-warning{
@@ -65,4 +65,10 @@ textarea:required:valid
 
 .circle-danger{
 	background-color: #c12e2a;
+}
+
+button > a,
+button > a:hover{
+    color: white;
+    text-decoration: none;
 }

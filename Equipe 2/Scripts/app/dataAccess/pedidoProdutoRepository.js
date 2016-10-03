@@ -10,7 +10,15 @@ var pedidoProdutoRepository = (function() {
 	}
 	
 	var add = function(pedido){
-		window.localStorage.setItem('pedidosProdutos', JSON.stringify(pedido));
+		var pedidosProdutos = getAll();
+
+		if(pedidosProdutos == null || pedidosProdutos == undefined){
+			pedidosProdutos = [];
+		}
+
+		pedidosProdutos.push();
+
+		window.localStorage.setItem('pedidosProdutos', JSON.stringify(pedidosProdutos));
 	}
 	
 	var getSingle = function(id){

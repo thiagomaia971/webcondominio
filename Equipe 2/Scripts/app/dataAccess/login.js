@@ -8,9 +8,14 @@ var login = (function() {
 			id: 1
 		}; 
 	}
+
+	function addFornecedorLogado(fornecedor){
+		window.localStorage.setItem('fornecedorLogado', JSON.stringify(fornecedor));
+	}
 	
 	return{
-		GetFornecedorLogado: getFornecedorLogado
+		GetFornecedorLogado: getFornecedorLogado,
+		AddFornecedorLogado: addFornecedorLogado
 	}
 	
 })();

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap-theme.css">
     <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap-theme.css.map">
     <link rel="stylesheet" href="../Styles/Site.css">
+    <link rel="stylesheet" href="../Styles/toastr/toastr.min.css">
 
     <meta charset="UTF-8">
 
@@ -38,6 +39,12 @@
                         <div class="form-group col-md-4">
                             <label for="NomeFornecedor">Nome do Fornecedor</label>
                             <input type="text" id="NomeFornecedor" name="NomeFornecedor" class="form-control" required minlength="3" maxlength="80" pattern="[a-z\s]+$" />
+                        </div>
+
+                        <!-- Email Fornecedor -->
+                        <div class="form-group col-md-4">
+                            <label for="Email">E-mail do Fornecedor</label>
+                            <input type="text" id="Email" name="Email" class="form-control" required minlength="3" maxlength="80" pattern="[a-z\s]+$" />
                         </div>
 
                         <div class="clearfix"></div>
@@ -80,24 +87,6 @@
 
                         </div>
 
-                        <!-- Tipo de Pessoa -->
-                        <div class="form-group col-md-12">
-                            <label class="radio-inline">
-                                <input type="radio" name="TipoPessoa" id="inlineRadio1" value="PessoaFisica"> Pessoa Fisica
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="TipoPessoa" id="inlineRadio2" value="PessoaJuridica"> Pessoa Juridica
-                            </label>
-                        </div>
-
-                        <!-- Container do Tipo de Pessoa -->
-                        <div id="containerTipoPessoa" class="col-md-12" style="padding-bottom: 15px">
-                            <div style="border: 1px solid black">
-                                Container do tipo de pessoa
-
-                            </div>
-                        </div>
-
                         <!-- Senha -->
                         <div class="form-group col-md-2">
                             <label for="Senha">Senha</label>
@@ -115,7 +104,7 @@
                 </div>
 
                 <div class="panel-footer">
-                    <button class="btn btn-danger" type="button">Cancelar</button>
+                    <a href="../Views/LoginFornecedor.html"><button class="btn btn-danger" type="button">Voltar</button></a>
                     <button id="btnCadastrarFornecedor" class="btn btn-success btn-formvalid centralizar-direita" type="submit" disabled>Cadastrar</button>
                 </div>
 
@@ -127,6 +116,11 @@
 
     <script src="../Scripts/library/jquery/jquery-2.2.3.js"></script>
     <script src="../Scripts/library/bootstrap/bootstrap.js"></script>
+    <script src="../Scripts/library/toastr/toastr.min.js"></script>
+    <script src="../Scripts/tools/toastrOptions.js"></script>
+
+    <script src="../Scripts/app/dataAccess/login.js"></script>
+    <script src="../Scripts/app/dataAccess/fornecedorRepository.js"></script>
     <script src="../Scripts/app/cadastroFornecedor/cadastroFornecedor.js"></script>
 
     <script src="../Scripts/library/inputMask/MaskedInputPlugin.js"></script>

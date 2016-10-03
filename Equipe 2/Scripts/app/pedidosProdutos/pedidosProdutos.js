@@ -44,7 +44,7 @@
             quantidade: 3,
             solicitacoesOferta: []
         });
-        pedidoProdutoRepository.Add(p);
+        //pedidoProdutoRepository.Add(p);
 
         // carregar todos os pedidos registrados no localStorage 
         var pedidos = pedidoProdutoRepository.GetAll();
@@ -125,7 +125,7 @@
     	
     	$("#solicitarOfertaModal").modal("hide");
     	
-    	toastr["success"]("Sua Solicitação de Oferta foi enviada com Sucesso!")
+    	toastr["success"]("Sua Solicitação de Oferta foi enviada com Sucesso!");
     	
     	limparModal();
     	
