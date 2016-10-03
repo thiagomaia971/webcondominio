@@ -12,10 +12,15 @@ var login = (function() {
 	function addFornecedorLogado(fornecedor){
 		window.localStorage.setItem('fornecedorLogado', JSON.stringify(fornecedor));
 	}
+
+	function addSindicoLogado(sindico){
+		window.localStorage.setItem("sindicoLogado", JSON.stringify(sindico));
+	}
 	
 	return{
 		GetFornecedorLogado: getFornecedorLogado,
-		AddFornecedorLogado: addFornecedorLogado
+		AddFornecedorLogado: addFornecedorLogado,
+		AddSindicoLogado: addSindicoLogado
 	}
 	
 })();

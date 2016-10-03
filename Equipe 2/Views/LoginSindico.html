@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap.css.map">
+        <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap-theme.css">
+        <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap-theme.css.map">
+        <link rel="stylesheet" href="../Styles/Site.css">
+        <link rel="stylesheet" href="../Styles/toastr/toastr.min.css">
+    
+        <meta charset="UTF-8">
+
+        <title>
+            WebCondominio - Home
+        </title>
+
+    </head>
+
+    <body>
+        
+        <div class="container">
+            
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">
+                    <p class="panel-title">Login de Sindico</p>
+                </div>
+
+                <div class="panel-body">
+                    <div class="col-md-8 col-md-offset-2">
+
+                        <div class="form-group col-md-6">
+                            <label for="Email">E-mail do Fornecedor</label>
+                            <input type="text" id="Email" name="Email" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="Senha">Senha</label>
+                            <input type="password" id="Senha" name="Senha" class="form-control"/>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div style="float: right">
+                            <!--<a href="../Views/CadastroFornecedor.html"><button type="submit" class="btn btn-default">Registrar</button></a> -->
+                            <button id="btnEntrar" type="submit" class="btn btn-success">Entrar</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+
+        <script src="../Scripts/library/jquery/jquery-2.2.3.js"></script>
+        <script src="../Scripts/library/bootstrap/bootstrap.js"></script>
+        <script src="../Scripts/library/toastr/toastr.min.js"></script>
+        <script src="../Scripts/tools/toastrOptions.js"></script>
+
+        <script src="../Scripts/app/dataAccess/login.js"></script>
+        <script src="../Scripts/app/dataAccess/sindicoRepository.js"></script>
+        
+        <script src="../Scripts/app/loginSindico/loginSindico.js"></script>
+
+        <script src="../Scripts/library/inputMask/MaskedInputPlugin.js"></script>
+
+        <script src="../Scripts/tools/input-mask.js"></script>
+        <script src="../Scripts/tools/formValidation.js"></script>
+
+    </body>
+
+</html>

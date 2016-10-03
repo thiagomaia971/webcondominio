@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap.css.map">
+    <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap-theme.css">
+    <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap-theme.css.map">
+    <link rel="stylesheet" href="../Styles/Site.css">
+    <link rel="stylesheet" href="../Styles/toastr/toastr.min.css">
+
+    <meta charset="UTF-8">
+
+    <title>
+        WebCondominio - Cadastro Pedido Produto
+    </title>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <form class="" data-valid="false">
+
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">
+                    <p class="panel-title">Cadastro de Pedido Produto</p>
+                </div>
+
+                <div class="panel-body">
+                    
+                    <div id="mensagemCadastro" class="" style="display: none;">
+
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2">
+
+                        <!-- Nome Produto -->
+                        <div class="form-group col-md-6">
+                            <label for="NomeProduto">Nome do Produto</label>
+                            <input type="text" id="NomeProduto" name="NomeProduto" class="form-control" required minlength="3" maxlength="80" pattern="[a-z\s]+$" />
+                        </div>
+
+                        <!-- Quantidade -->
+                        <div class="form-group col-md-6">
+                            <label for="Quantidade">Quantidade</label>
+                            <input type="number" id="Quantidade" name="Quantidade" class="form-control" required min="1" max="80" pattern="[a-z\s]+$" />
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="panel-footer">
+                    <a href="./PedidosProdutosSindico.html"><button class="btn btn-danger" type="button">Voltar</button></a>
+                    <button id="btnCadastroPedidoProduto" class="btn btn-success btn-formvalid centralizar-direita" type="submit" disabled>Cadastrar</button>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <script src="../Scripts/library/jquery/jquery-2.2.3.js"></script>
+    <script src="../Scripts/library/bootstrap/bootstrap.js"></script>
+    <script src="../Scripts/library/toastr/toastr.min.js"></script>
+    <script src="../Scripts/library/inputMask/MaskedInputPlugin.js"></script>
+
+    <script src="../Scripts/tools/toastrOptions.js"></script>
+    <script src="../Scripts/tools/input-mask.js"></script>
+    <script src="../Scripts/tools/formValidation.js"></script>
+
+    <script src="../Scripts/app/dataAccess/pedidoProdutoRepository.js"></script>
+    
+    <script src="../Scripts/app/cadastroPedidoProduto/cadastroPedidoProduto.js"></script>
+
+
+</body>
+</html>

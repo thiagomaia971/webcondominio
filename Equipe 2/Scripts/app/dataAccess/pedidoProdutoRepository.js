@@ -16,7 +16,7 @@ var pedidoProdutoRepository = (function() {
 			pedidosProdutos = [];
 		}
 
-		pedidosProdutos.push();
+		pedidosProdutos.push(pedido);
 
 		window.localStorage.setItem('pedidosProdutos', JSON.stringify(pedidosProdutos));
 	}
@@ -41,6 +41,16 @@ var pedidoProdutoRepository = (function() {
 		window.localStorage.setItem("pedidosProdutos", JSON.stringify(pedidosProdutos));
 	}
 	
+	var getLastPedidoProduto = function(){
+		var pedidos = getAll();
+
+		if(pedidos == null || pedidos == undefined){
+			return null;
+		}
+
+		return pedidos[pedidos.length - 1];
+	}
+
 	var getLastSolicitacaoOferta = function(pedidoProdutoId){
 		var pedidoProduto = getSingle(pedidoProdutoId);
 		
@@ -54,7 +64,8 @@ var pedidoProdutoRepository = (function() {
 		Add: add,
 		AddSolicitacaoOferta: addSolicitacaoOferta,
 		GetSingle: getSingle,
-		GetLastSolicitacaoOferta: getLastSolicitacaoOferta
+		GetLastSolicitacaoOferta: getLastSolicitacaoOferta,
+		GetLastPedidoProduto: getLastPedidoProduto
 	}
 	
 })();
