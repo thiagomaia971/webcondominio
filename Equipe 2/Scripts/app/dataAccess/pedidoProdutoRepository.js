@@ -58,6 +58,26 @@ var pedidoProdutoRepository = (function() {
 		
 		return pedidoProduto.solicitacoesOferta[lastIndex];
 	}
+
+	var getSolicitacaoOferta = function(solicitacaoOfertaId){
+		var pedidosProdutos = getAll();
+		var solicitacaoOferta;
+		var index = solicitacaoOfertaId - 1;
+
+		pedidosProdutos.forEach(function(_pedidoProduto) {
+
+			if(_pedidoProduto.solicitacoesOferta[index] != null || 
+			   _pedidoProduto.solicitacoesOferta[index] != undefined)	
+			   solicitacaoOferta = _pedidoProduto.solicitacoesOferta[index];
+
+		}, this);
+
+		return solicitacaoOferta;
+	}
+
+	var update = function(pedidosProdutos){
+		window.localStorage.setItem('pedidosProdutos', JSON.stringify(pedidosProdutos));
+	}
 	
 	return{
 		GetAll: getAll,
@@ -65,7 +85,9 @@ var pedidoProdutoRepository = (function() {
 		AddSolicitacaoOferta: addSolicitacaoOferta,
 		GetSingle: getSingle,
 		GetLastSolicitacaoOferta: getLastSolicitacaoOferta,
-		GetLastPedidoProduto: getLastPedidoProduto
+		GetLastPedidoProduto: getLastPedidoProduto,
+		GetSolicitacaoOferta: getSolicitacaoOferta,
+		Update: update
 	}
 	
 })();

@@ -3,10 +3,7 @@ var login = (function() {
 	'use strict';
 
 	function getFornecedorLogado(){
-		// TODO: implementar e fazer o UML do Fornecedor.
-		return {
-			id: 1
-		}; 
+		return JSON.parse(window.localStorage.getItem('fornecedorLogado'));
 	}
 
 	function addFornecedorLogado(fornecedor){

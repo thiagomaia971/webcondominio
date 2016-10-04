@@ -71,12 +71,17 @@
     	var todosPedidosProdutos = pedidoProdutoRepository.GetAll();
     	
     	var index = numeroPedidoId - 1;
-    	var pedidoProduto = todosPedidosProdutos[index];
+        console.log(index);
+
+        if(index >= 0){
+            var pedidoProduto = todosPedidosProdutos[index];
+            
+            $("#NomeProduto").text(pedidoProduto.nomeProduto);
+            $("#QuantidadePedida").text(pedidoProduto.quantidade);
+        }
+
+        $("#btnSolicitarOferta").data("pedidoid", numeroPedidoId);
     	
-    	$("#NomeProduto").text(pedidoProduto.nomeProduto);
-    	$("#QuantidadePedida").text(pedidoProduto.quantidade);
-    	
-    	$("#btnSolicitarOferta").data("pedidoid", numeroPedidoId);
     }
 
     // Limpar modal
@@ -120,7 +125,8 @@
     			precoUnitario: viewModel[PRECO_UNITARIO].value,
     			status: statusSolicitacaoOferta.PENDENTE
     	};
-    	
+    	console.log(solicitacaoOferta);
+
     	pedidoProdutoRepository.AddSolicitacaoOferta(solicitacaoOferta);
     	
     	$("#solicitarOfertaModal").modal("hide");
@@ -136,14 +142,12 @@
     	
         // localiza o template
         var source = $("#templateTabelaMinhasSolicitacoes").html() + "";
-        console.log(source);
         
         // compila o template
         var template = Handlebars.compile(source);
         
         // define os dados do template
         var dados = {pedidoProduto};
-        
         
         // insere o template
         $("#holderTabelaMinhasSolicitacoes").html(template(dados));

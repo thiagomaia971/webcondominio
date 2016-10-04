@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap-theme.css.map">
     <link rel="stylesheet" href="../Styles/Site.css">
     <link rel="stylesheet" href="../Styles/toastr/toastr.css">
+
     <meta charset="UTF-8">
     <title>
         WebCondominio - Pedidos de produtos
@@ -26,11 +27,11 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title">Solicitações de Oferta</h4>
                     </div>
-                    <div class="modal-body" id="holderTabelaMinhasSolicitacoes">
+                    <div class="modal-body" id="holderVerOfertas">
 
                     </div>
 					<!--template para preencher tabela-->
-                      <script id="templateTabelaMinhasSolicitacoes" type="text/x-handlebars-template">
+                      <script id="templateVerOfertas" type="text/x-handlebars-template">
 							<div class="form-group col-md-6">
                                 <label>Produto: </label>
                                 <span id="NomeProduto" class="disabled">{{pedidoProduto.nomeProduto}}</span>
@@ -61,6 +62,7 @@
                                 <thead>
                                     <tr>
 										<th class="col-md-1">Status</th>
+                                        <th>Fornecedor</th>
                                         <th class="col-md-4">Descrição</th>
                                         <th class="col-md-3">Quantidade a Fornecer</th>
 										<th class="col-md-2">Preço Unitário</th>
@@ -81,16 +83,27 @@
 												<span class="circle circle-danger col-md-offset-4"></span>
 											{{/ifCond}}
 										</td>
+                                        <td>
+                                            {{fornecedor.nomeFornecedor}}
+                                        </td>
                                         <td>{{descricao}}</td>
                                         <td>{{quantidadeFornecer}}</td>
                                         <td>{{precoUnitario}}</td>
                                         <td>
-
+                                            {{#ifCond status "==" "0"}}
+                                                <button id="aprovarSolicitacao" class="btn btn-success" type="button" title="Aprovar" data-solicitacaoid="{{id}}">
+                                                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                                                </button>
+                                                <button id="reprovarSolicitacao" class="btn btn-danger" type="button" title="Reprovar" data-solicitacaoid="{{id}}">
+                                                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                                                </button>
+                                            {{/ifCond}}
                                         </td>
                                     </tr>
                                     {{/each}}
                                 </tbody>
                             </table>
+                            
                        </script>
                       <!--fim do template-->
 
@@ -127,6 +140,15 @@
                             </div>
                         </div>
                     </div>
+
+                    <div style="padding-bottom: 20px">
+                        
+                        <div class="cart cart-info">
+                            <span class="glyphicon glyphicon-th-list"></span> Ver Ofertas
+                        </div> 
+
+                    </div>
+
                     <div class="row col-md-12" id='holderTabelaPedidos'>
                         <!--template para preencher tabela-->
                        <script id="templateTabelaPedidos" type="text/x-handlebars-template">
@@ -135,8 +157,8 @@
                                     <tr>
                                         <th class="col-md-1">Nº Pedido</th>
                                         <th class="col-md-6">Nome do Produto</th>
-                                        <th class="col-md-2">Quantidade</th>
-                                        <th class="col-md-3 text-center">Ações</th>
+                                        <th class="col-md-3">Quantidade</th>
+                                        <th class="text-center" style="width: 100%">Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody id='table-pedidos-body'>
@@ -146,13 +168,15 @@
                                         <td>{{nomeProduto}}</td>
                                         <td>{{quantidade}}</td>
                                         <td>
-                                            <button id="abrirOfertas" 
-												class="btn btn-info" type="button" data-toggle="modal" data-target="#verOfertasModal"
-                                                data-pedidoid={{id}} data-backdrop="static" data-keyboard="false"> 
+                                            <div style="margin-left: 30%">
+                                                <button id="abrirOfertas" title="Ver Ofertas"
+                                                    class="btn btn-info" type="button" data-toggle="modal" data-target="#verOfertasModal"
+                                                    data-pedidoid={{id}} data-backdrop="static" data-keyboard="false"> 
 
-												Ver ofertas
+                                                    <span class="glyphicon glyphicon-th-list"></span> ({{solicitacoesOferta.length}})
 
-											</button>
+                                                </button>
+                                            </div>
 
                                         </td>
                                     </tr>
@@ -180,7 +204,7 @@
     <script src="../Scripts/app/dataAccess/login.js"></script>
 
     <script src="../Scripts/app/pedidosProdutos/statusSolicitacaoOferta.js"></script>
-    <script src="../Scripts/app/pedidosProdutos/pedidosProdutos.js"></script>
+    <script src="../Scripts/app/pedidosProdutosSindico/pedidosProdutosSindico.js"></script>
 
 </body>
 
