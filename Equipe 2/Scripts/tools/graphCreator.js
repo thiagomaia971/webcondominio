@@ -1,13 +1,13 @@
 var graphCreator = (function () {
     'use strict';
 
-    function create(canvas, data, range){
+    function create(canvas, label, data, range, type){
         var config = {
-        type: 'bar',
+        type: type,
         data: {
             labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"].slice(range.mesDe, range.mesAte),
             datasets: [{
-                label: 'N de inadimplentes',
+                label: label,
                 data: [12, 10, 3, 5, 2, 3, 8, 7, 30, 25, 1, 4].splice(range.mesDe, range.mesAte),
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -56,6 +56,6 @@ var graphCreator = (function () {
 
     return{
         create : create
-    }
+    };
 
 })();

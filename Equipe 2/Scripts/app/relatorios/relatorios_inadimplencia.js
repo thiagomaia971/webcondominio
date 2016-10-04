@@ -8,7 +8,7 @@
 
 
     function generateGraph(mesDe, mesAte) {
-        
+
         mesDe = parseInt(mesDe);
         mesAte = parseInt(mesAte);
 
@@ -16,12 +16,12 @@
             $('#selectionErrorModal').modal();
             return;
         }
-    
+
         // caso algum grafico ja tenha sido criado anteriormente
         // é necessario remover o canvas e criar um novo
         if( $('#graficoInadimplencia').length) {
             $('#graficoInadimplencia').remove();
-            $('div.container').append( $('<canvas id="graficoInadimplencia" width="400" height="300"></canvas>') )
+            $('div.container').append( $('<canvas id="graficoInadimplencia" width="400" height="300"></canvas>') );
         }
         var canvas = $('#graficoInadimplencia')[0];
 
@@ -32,21 +32,20 @@
 
         // numeroInadimplentesFiltrado possui somente o numero dos meses que o usuario selecionou
         var numeroInadimplentesFiltrado = numeroInadimplentes.slice(mesDe, mesAte+1);
-        
+
         // range informa para a função create quais colunas devem aparecer
         var range = {
-            mesDe : mesDe, 
+            mesDe : mesDe,
             mesAte : mesAte + 1
-        }
-  
+        };
+
         // criação do grafico
-        // canvas = espaço na view para desenhar o grafico
-        // numeroInadimplentesFiltrado = um vetor com tamanho de cada coluna 
-        // range = quais colunas devem aparecer
-        graphCreator.create(canvas, numeroInadimplentesFiltrado, range);
+        // primeiro argumento = espaço na view para desenhar o grafico
+        // segundo argumento = legenda do grafico
+        // terceiro argumento = um vetor com tamanho de cada coluna
+        // quarto argumento = quais colunas devem aparecer
+        // quinto argumento = estilo do grafico
+        graphCreator.create(canvas, 'N de inadimplentes', numeroInadimplentesFiltrado, range, 'bar');
     }
 
 })();
-
-
-

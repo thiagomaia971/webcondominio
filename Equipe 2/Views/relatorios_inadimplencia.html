@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap.css.map">
+    <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap-theme.css">
+    <link rel="stylesheet" href="../Styles/Bootstrap/bootstrap-theme.css.map">
+    <link rel="stylesheet" href="../Styles/Site.css">
+</head>
+
+<body>
+    <div class='container'>
+        <div class="offsetpage-header">
+            <h1>Relatório de inadimplência</h1>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">De:</span>
+            <select class="form-control" id="mesDe">
+                <option value="0">Janeiro</option>
+                <option value="1">Fevereiro</option>
+                <option value="2">Março</option>
+                <option value="3">Abril</option>
+                <option value="4">Maio</option>
+                <option value="5">Junho</option>
+                <option value="6">Julho</option>
+                <option value="7">Agosto</option>
+                <option value="8">Setembro</option>
+                <option value="9">Outubro</option>
+                <option value="10">Novembro</option>
+                <option value="11">Dezembro</option>
+            </select>
+
+            <span class="input-group-addon">Até:</span>
+            <select class="form-control" id="mesAte">
+                <option value="0">Janeiro</option>
+                <option value="1">Fevereiro</option>
+                <option value="2">Março</option>
+                <option value="3">Abril</option>
+                <option value="4">Maio</option>
+                <option value="5">Junho</option>
+                <option value="6">Julho</option>
+                <option value="7">Agosto</option>
+                <option value="8">Setembro</option>
+                <option value="9">Outubro</option>
+                <option value="10">Novembro</option>
+                <option value="11">Dezembro</option>
+            </select>
+        </div>
+        <div id="selectionErrorModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Erro</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Por favor selecione um intervalo de meses válido</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <canvas id="graficoInadimplencia" width="400" height="300"></canvas>
+    </div>
+
+
+    <script src="../Scripts/library/jquery/jquery-2.2.3.js"></script>
+    <script src="../Scripts/library/bootstrap/bootstrap.js"></script>
+    <script src="../Scripts/app/dataAccess/pedidoProdutoRepository.js"></script>
+    <script src="../Scripts/library/Chart-2.3.0.js"></script>
+    <script src="../Scripts/tools/graphCreator.js"></script>
+    <script src="../Scripts/app/relatorios/relatorios_inadimplencia.js"></script>
+</body>
+
+</html>
