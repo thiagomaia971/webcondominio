@@ -131,6 +131,8 @@
     	
     	$("#solicitarOfertaModal").modal("hide");
     	
+    	loadTablePedidos();
+    	
     	toastr["success"]("Sua Solicitação de Oferta foi enviada com Sucesso!");
     	
     	limparModal();
